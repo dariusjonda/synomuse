@@ -1,1 +1,14 @@
 #!/bin/bash
+
+filter() {
+  grep "word" \
+    | sed 's/.*://g; s/"//g; s/,//g' \
+    | sed ':a;N;$!ba;s/\n/,/g'
+}
+
+OUT=$(curl -s "https://api.datamuse.com/words?rel_syn="$1"&max=20" | \
+  python -mjson.tool | \
+  filter
+)
+
+echo "$OUT"
