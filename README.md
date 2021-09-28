@@ -9,9 +9,9 @@
 #### Install
 clone the repo and use the `make` utility:
 ```
-git clone https://github.com/dariusjonda/synomuse.git \ 
+git clone https://github.com/dariusjonda/synomuse.git \
 && cd synomuse \
-make install
+&& make install
 ```
 
 #### Uninstall
